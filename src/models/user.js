@@ -3,7 +3,8 @@ export default {
   state: {
     data: [],
     key: '72eed010c976e448971655b56fc2324e',
-    v: '1.0'
+    v: '1.0',
+    age: 10
   },
 
   effects: {
