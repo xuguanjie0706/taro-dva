@@ -9,8 +9,6 @@ console.log(process.env.NODE_ENV);
 
 class request {
   static post(options) {
-    console.log(options);
-
     const defaultData = {
       ...options,
       method: "POST"
@@ -19,18 +17,18 @@ class request {
   }
 
   static get(options) {
-    console.log(options);
     const defaultData = {
       ...options,
     }
     this.init(defaultData)
   }
 
-  static init({ url, data, method = "GET", isMock = false, complete = () => { }, }) {
+  static init({ url, data, method = "GET", isMock = false, complete = () => { }, header }) {
     return new Promise((reselve) => {
       Taro.request({
-        url: isMock ? config.mockUrl : process.env.NODE_ENV == "development" ? config.devUrl : config.prodUrl + url,
+        url: (isMock ? config.mockUrl : process.env.NODE_ENV == "development" ? config.devUrl : config.prodUrl) + url,
         complete,
+        header,
         data,
         method,
         success: (r) => {

@@ -1,3 +1,6 @@
+
+// import key from 'keymaster';
+
 export default {
   namespace: 'user',
   state: {
@@ -30,5 +33,10 @@ export default {
     updateState(state, { payload: data }) {
       return { ...state, ...data }
     }
+  },
+  subscriptions: {
+    // keyEvent({ dispatch }) {
+    //   key("1", () => { dispatch({ type: "add" }) })
+    // },
   }
 }

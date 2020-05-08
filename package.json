@@ -47,6 +47,7 @@
     "docdash": "^1.2.0",
     "dva-core": "^2.0.2",
     "dva-loading": "^3.0.20",
+    "keymaster": "^1.6.2",
     "nerv-devtools": "^1.5.0",
     "nervjs": "^1.5.0",
     "redux": "^4.0.5",

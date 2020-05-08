@@ -23,11 +23,10 @@ function printBuffer(logEntry, options = defaults) {
   const styles = s => `color: ${s}; font-weight: bold`
 
   /* render */
-  logger.group(`%c ${title} @${dayjs(started).format("YYYY-MM-DD")}`, ...headerCSS)
+  logger.group(`%c ${title} @${dayjs(started).format("YYYY-MM-DD HH:mm:ss")}`, ...headerCSS)
   logger.log('%c req', styles(colors.req), req)
   logger.log('%c res', styles(colors.res), res)
   logger.groupEnd()
-
 }
 
 

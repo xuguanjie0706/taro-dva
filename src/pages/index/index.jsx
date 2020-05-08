@@ -17,18 +17,14 @@ export default class Index extends Component {
 
   componentWillMount() { }
 
-  componentDidMount() {
-    console.log(this.props);
-    console.log(Tips.isLoading);
-    logger({
-      title: "nihao",
-      res: { a: 123, b: 345 },
-      req: { f: 123 }
-    })
+  async componentDidMount() {
+    // console.log(this.props);
+    // console.log(Taro.ENV_TYPE);
+    // console.log(Taro.getEnv());
+    let data = { age: 12, name: "ab" }
+    const r = await api.user.getUserInfo(data);
+    logger({ title: "数据返回", req: data, res: r })
 
-    console.log(Taro.ENV_TYPE);
-    console.log(Taro.getEnv());
-    api.user.getUserInfo({ data: { age: 12, name: "ab" } });
   }
 
   componentWillUnmount() { }
@@ -41,8 +37,6 @@ export default class Index extends Component {
     Taro.navigateTo({
       url: "/pages/user/index"
     })
-    console.log(12);
-
   }
 
   changeState = () => {
