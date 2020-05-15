@@ -13,14 +13,14 @@ class request {
       ...options,
       method: "POST"
     }
-    this.init(defaultData)
+    return this.init(defaultData)
   }
 
   static get(options) {
     const defaultData = {
       ...options,
     }
-    this.init(defaultData)
+    return this.init(defaultData)
   }
 
   static init({ url, data, method = "GET", isMock = false, complete = () => { }, header }) {
